@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0" />
+    <title>Cronometer</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css" media="all" />
+  </head>
+  
+  <body>
+    <h1>Cronometer</h1>
+    
+    <div class="cronometer-box">
+      <div class="cronometer__input">
+        <label for="minutes">
+          How many minutes?
+          <input type="number" id="minutes" />
+        </label>
+        <label for="seconds">
+          How many seconds?
+          <input type="number" id="seconds" />
+          <br />
+        </label>
+        <button type="submit" id="send">Start</button>
+        <button type="submit" id="stop">Stop</button>
+      </div> <!--cronometer__input-->
+      <div class="cronometer__time">
+        <h2 class="time__display">00 : 00</h2>
+      </div> <!--cronometer__display-->
+    </div> <!-- cronometer-box -->
+    
+    <footer>
+    	<h4>code by <a href="https://www.github.com/alissonbatalha">Alisson Batalha</a></h4>
+    </footer>
+    
+    <script src="script.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
