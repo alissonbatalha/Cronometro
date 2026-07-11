@@ -1,0 +1,18 @@
+{
+  "name": "cronometro",
+  "version": "1.0.0",
+  "description": "Um cronômetro countdown construído com HTML, CSS e JavaScript",
+  "main": "index.html",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "author": "Alisson Batalha",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alissonbatalha/cronometro"
+  }
+}
