@@ -1,38 +1,70 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width,  initial-scale=1.0" />
-    <title>Cronometer</title>
-    <link rel="stylesheet" href="./css/style.css" type="text/css" media="all" />
-  </head>
-  
-  <body>
-    <h1>Cronometer</h1>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cronômetro - Countdown</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app-container">
+    <h1 class="app-title">Cronômetro</h1>
     
-    <div class="cronometer-box">
-      <div class="cronometer__input">
-        <label for="minutes">
-          How many minutes?
-          <input type="number" id="minutes" />
-        </label>
-        <label for="seconds">
-          How many seconds?
-          <input type="number" id="seconds" />
-          <br />
-        </label>
-        <button type="submit" id="send">Start</button>
-        <button type="submit" id="stop">Stop</button>
-      </div> <!--cronometer__input-->
-      <div class="cronometer__time">
-        <h2 class="time__display">00 : 00</h2>
-      </div> <!--cronometer__display-->
-    </div> <!-- cronometer-box -->
-    
-    <footer>
-    	<h4>code by <a href="https://www.github.com/alissonbatalha">Alisson Batalha</a></h4>
+    <div class="timer-box" role="region" aria-label="Controle do cronômetro">
+      
+      <form class="timer-inputs" id="timerForm" novalidate>
+        <div class="input-group">
+          <label for="minutesInput">Minutos</label>
+          <input 
+            type="number" 
+            id="minutesInput" 
+            min="0" 
+            max="59" 
+            value="0"
+            aria-label="Número de minutos"
+            aria-describedby="minutesError"
+          >
+          <span id="minutesError" class="error-message" role="alert"></span>
+        </div>
+
+        <div class="input-group">
+          <label for="secondsInput">Segundos</label>
+          <input 
+            type="number" 
+            id="secondsInput" 
+            min="0" 
+            max="59" 
+            value="0"
+            aria-label="Número de segundos"
+            aria-describedby="secondsError"
+          >
+          <span id="secondsError" class="error-message" role="alert"></span>
+        </div>
+
+        <div class="button-group">
+          <button type="button" id="startBtn" class="btn btn-primary" aria-label="Iniciar cronômetro">
+            Iniciar
+          </button>
+          <button type="button" id="pauseBtn" class="btn btn-secondary" disabled aria-label="Pausar cronômetro">
+            Pausar
+          </button>
+          <button type="button" id="resetBtn" class="btn btn-danger" disabled aria-label="Resetar cronômetro">
+            Resetar
+          </button>
+        </div>
+      </form>
+
+      <div class="timer-display" role="timer" aria-live="polite" aria-atomic="true">
+        <h2 id="timeDisplay" class="time-value">00:00</h2>
+        <p class="timer-status" id="timerStatus" aria-label="Status do cronômetro"></p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Desenvolvido por <a href="https://github.com/alissonbatalha" target="_blank" rel="noopener">Alisson Batalha</a></p>
     </footer>
-    
-    <script src="script.js" type="text/javascript" charset="utf-8"></script>
-  </body>
+  </main>
+
+  <script src="script.js" type="module"></script>
+</body>
 </html>
